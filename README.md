@@ -27,7 +27,7 @@ await renamePackage("old-name", "new-name", { otp: "OTP" });
 If you need to set `access:public` or `access:private`, you can do:
 
 ```js
-await renamePackage("old-name", "new-name", { options: "ACCESS" });
+await renamePackage("old-name", "new-name", { access: "ACCESS" });
 ```
 
 ### Versions
