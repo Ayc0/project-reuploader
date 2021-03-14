@@ -1,3 +1,5 @@
+⚠️ THIS PROJECT ISN'T STABLE, ONLY TESTED ON 1 PACKAGE AND ONLY WORKS WITH NODE 15 (I think it does with node 14 too, but I'm not sure)
+
 # Goal
 
 The goal of this package is to ease the renaming of a package in NPM and to redeploy all previous versions in the new package.
