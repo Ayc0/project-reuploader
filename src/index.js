@@ -27,12 +27,7 @@ const renamePackageForVersion = (packageName, newName, options) => async (
  * @param {string} newName
  * @returns {Promise<void>}
  */
-export const renamePackage = async (
-  packageName,
-  newName,
-  options,
-  specifiedVersion = {}
-) => {
+export const renamePackage = async (packageName, newName, options = {}) => {
   if (!packageName) {
     throw new Error("A package name needs to be provided");
   }
@@ -42,13 +37,13 @@ export const renamePackage = async (
   }
 
   let versions;
-  if (specifiedVersion.versions && Array.isArray(specifiedVersion.versions)) {
-    versions = specifiedVersion.versions;
+  if (options.versions && Array.isArray(options.versions)) {
+    versions = options.versions;
   } else {
     versions = await npm.getAllVersions(packageName);
   }
-  if (specifiedVersion.excluded && Array.isArray(specifiedVersion.excluded)) {
-    versions = versions.filter((v) => !specifiedVersion.excluded.includes(v));
+  if (options.excluded && Array.isArray(options.excluded)) {
+    versions = versions.filter((v) => !options.excluded.includes(v));
   }
 
   const applyRename = renamePackageForVersion(packageName, newName, options);
