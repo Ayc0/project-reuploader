@@ -1,0 +1,13 @@
+{
+  "name": "project-reuploader",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Reupload packages in a different name",
+  "main": "src/index.js",
+  "author": "Ayc0 <ayc0.benj@gmail.com>",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  }
+}
